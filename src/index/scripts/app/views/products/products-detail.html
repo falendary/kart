@@ -1,0 +1,25 @@
+<ion-view view-title="{{vm.product.productName}}">
+  <ion-content>
+      <div class="card">
+        <div class="row">
+          <div class="col-40">
+            Название
+          </div>
+          <div class="col-60">
+            {{vm.product.productName}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-40">
+            Категория
+          </div>
+          <div class="col-60">
+            {{vm.product.category.categoryName}}
+          </div>
+        </div>
+      </div>
+      <div class="bill-footer">
+        <button class="button" data-ui-sref="app.products">Вернуться</button>
+      </div>
+  </ion-content>
+</ion-view>

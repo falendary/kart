@@ -1,0 +1,30 @@
+<ion-view>
+  <ion-content>
+    <ion-list>
+      <button data-ui-sref="app.products-add" class="button">Добавить товар</button>
+      <div data-ng-repeat="category in vm.categories">
+        <ion-item class="item-stable"
+                  data-ng-click="vm.toggleCategory(category)"
+                  data-ng-class="{active: vm.isCategoryShown(category)}">
+          <i class="icon" data-ng-class="vm.isCategoryShown(category) ? 'ion-minus' : 'ion-plus'"></i>
+          &nbsp;
+          {{category.categoryName}}
+        </ion-item>
+        <ion-item class="item-accordion"
+                  data-ng-repeat="product in category.products"
+                  data-ng-show="vm.isCategoryShown(category)">
+          <div class="row">
+            <div class="col-80">
+              {{product.productName}}
+            </div>
+            <div class="col-20">
+              <button class="button" data-ui-sref="app.products-detail( {productId: product._id} )">
+                <div class="ion-ios-arrow-right" data-pack="ios" data-tags="chevron"></div>
+              </button>
+            </div>
+          </div>
+        </ion-item>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

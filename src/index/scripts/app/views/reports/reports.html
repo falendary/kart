@@ -1,0 +1,54 @@
+<ion-view view-title="Отчеты">
+  <ion-content>
+    <div class="list reports-options-list">
+
+      <div class="item report-option">
+        <div class="row">
+          <div class="col-10 report-list-icon">
+            <i class="icon ion-ios-pie"></i>
+          </div>
+          <div class="col-60 option-caption">
+            Отчет за последний
+          </div>
+          <span class="col-30">
+            <button data-ui-sref="app.reports-new-chart({chartType: 'lastMonth'})" class="button report-month-option">месяц</button>
+            <button data-ui-sref="app.reports-new-chart({chartType: 'lastWeek'})" class="button report-week-option">неделю</button>
+          </span>
+        </div>
+      </div>
+      <div class="item report-option">
+        <div class="row">
+          <div class="col-10 report-list-icon">
+            <i class="icon ion-ios-nutrition"></i>
+          </div>
+          <div class="col-50">
+            Отчет по продукту
+          </div>
+        </div>
+      </div>
+
+      <div class="item report-option">
+        <div class="row">
+          <div class="col-10 report-list-icon">
+            <i class="icon ion-ios-box"></i>
+          </div>
+          <div class="col-50">
+            Отчет по категории
+          </div>
+        </div>
+      </div>
+
+      <div class="item report-option">
+        <div class="row">
+          <div class="col-10 report-list-icon">
+            <i class="icon ion-ios-color-wand"></i>
+          </div>
+          <div class="col-50">
+            Построить свой отчет
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

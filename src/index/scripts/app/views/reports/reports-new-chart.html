@@ -1,0 +1,13 @@
+<ion-view view-title="График">
+  <ion-content>
+      <div class="card" data-ng-if="vm.data">
+        <canvas id="line" class="chart chart-line"
+                data-chart-data="vm.data"
+                data-chart-labels="labels"
+                data-chart-legend="true"
+                data-chart-series="series"
+                data-chart-click="onClick">
+        </canvas>
+      </div>
+  </ion-content>
+</ion-view>

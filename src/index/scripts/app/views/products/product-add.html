@@ -1,0 +1,23 @@
+<ion-view view-title="Новый товар">
+  <ion-content>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="Название товара" data-ng-model="vm.item.productName">
+      </label>
+      <label class="item item-input">
+        <input type="search"
+               placeholder="Категория товара" data-ng-model="vm.item.category.categoryName" data-ng-change="vm.categorySearch()">
+      </label>
+    </div>
+    <div class="list">
+      <li class="item"
+          data-ng-repeat="category in vm.categoriesAutoComplete"
+          data-ng-bind="::category.categoryName"
+          data-ng-click="vm.setCategory(category)"></li>
+    </div>
+    <button class="button" style="float: right; margin-right: .6em" data-ng-click="vm.addProduct()">
+      Добавить
+    </button>
+  </ion-content>
+</ion-view>
+

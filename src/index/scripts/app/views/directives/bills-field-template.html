@@ -1,0 +1,22 @@
+<div class="item row">
+  <div class="col-10 bill-column justify-content-center">
+    <a href="" data-ng-click="addField()" class="field-btn-control plus active">
+      <i class="ion-plus-circled"></i>
+    </a>
+    <a href="" data-ng-click="removeField()" class="field-btn-control minus">
+      <i class="ion-close-circled"></i>
+    </a>
+  </div>
+  <div class="col-40 bill-column">
+    <input type="text" placeholder="" data-ng-model="field.name"/>
+  </div>
+  <div class="col-20 bill-column">
+    <input type="number" placeholder="" data-ng-model="field.price" class="text-center" data-ng-change="autoCalcTotal()"/>
+  </div>
+  <div class="col-10 bill-column">
+    <input type="number" placeholder="" data-ng-model="field.quantity" class="text-center" data-ng-change="autoCalcTotal()"/>
+  </div>
+  <div class="col-20 bill-column">
+    <input type="number" placeholder="" data-ng-model="field.total" class="text-center" data-ng-change="updatePrice()"/>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+.reports-options-list {
+  .option-caption {
+  }
+  .report-list-icon {
+    font-size: 22px;
+  }
+  .item {
+    &.report-option {
+      max-height: 64px;
+    }
+    .row {
+      .col-15 {
+      }
+      .report-month-option {
+
+      }
+      .report-week-option {
+        left: -20px;
+      }
+      .button {
+        position: relative;
+        top: -10px;
+        left: -12px;
+        min-height: 42px;
+        height: 42px;
+        font-size: 13px;
+        padding: 0 4px;
+        line-height: 0px;
+      }
+    }
+  }
+}

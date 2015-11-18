@@ -1,0 +1,45 @@
+.bill-header {
+  .bill-column {
+    align-items: center;
+    display: flex;
+  }
+}
+
+.bill-body {
+  .bill-column {
+    align-items: center;
+    display: flex;
+    border-right: 1px solid #ddd;
+    &:first-child {
+      border-right: 0;
+    }
+    &:last-child {
+      border-right: 0;
+    }
+    input {
+      width: 100%;
+      max-width: 100%;
+      display: block;
+    }
+  }
+}
+.bill-footer {
+  padding: .5em;
+  overflow: hidden;
+}
+.bill-date-holder {
+  margin-top: .5em;
+}
+.total-holder {
+  overflow: hidden;
+  padding-top: 1.3em;
+  p {
+    float: left;
+    &.caption {
+      font-weight: bold;
+    }
+    &.total {
+      margin-left: .5em;
+    }
+  }
+}
