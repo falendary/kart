@@ -41,7 +41,7 @@ export class BillsService {
     let startDate: Date = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
     let endDate: Date = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
 
-    //console.log('startDate', startDate, 'endDate', endDate);
+    console.log('startDate', startDate, 'endDate', endDate);
 
     return this.billsRepository.getListByMonth(startDate, endDate);
   }

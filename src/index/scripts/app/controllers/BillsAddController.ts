@@ -93,7 +93,7 @@ export class BillsAddController extends BaseController {
 
     this.billsService.add(this.bill).then((response: Response)=> {
       console.log('Bills add Controller add bill', response);
-      this.state.go('app.bills', {reload: true});
+      this.state.go('app.bills', {}, {reload: true});
     })
   }
 

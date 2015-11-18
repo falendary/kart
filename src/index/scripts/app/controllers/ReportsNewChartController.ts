@@ -8,6 +8,7 @@ import {BaseController} from './BaseController';
 import {ProductsService} from '../services/ProductsService';
 import {BillsService} from '../services/BillsService';
 import {CategoriesService} from '../services/CategoriesService';
+import {ChartService} from '../services/ChartService';
 
 import {Product} from '../models/ProductModel';
 import {Bill} from '../models/BillModel';
@@ -24,9 +25,12 @@ export class ReportsNewChartController extends BaseController {
   private productsService: ProductsService = new ProductsService();
   private billsService: BillsService = new BillsService();
   private categoriesService: CategoriesService = new CategoriesService();
+  private chartService: ChartService = new ChartService();
 
   public chartType: string;
-  public data: Array<Product | Bill | Category>;
+  public data: Array<any> = [];
+  public labels: Array<string> = [];
+  public series: Array<string> = [];
 
 
   constructor($scope: ng.IScope, $state: ng.ui.IStateService, $stateParams: IReportsNewChartControllerParams) {
@@ -42,6 +46,8 @@ export class ReportsNewChartController extends BaseController {
     } else {
       if (this.chartType === 'lastWeek') {
         this.drawChartLastWeek();
+      } else {
+        $state.go('app.reports', {}, {reload: true});
       }
     }
 
@@ -50,7 +56,12 @@ export class ReportsNewChartController extends BaseController {
   public drawChartLastMonth(): void {
     this.billsService.getListByMonth(new Date()).then((data: Array<Bill>) => {
       console.log('data', data);
-      this.data = data;
+
+      this.labels = this.chartService.getLabelsForMonth();
+      console.log('labels', this.labels);
+      let i: number;
+      this.data = [[]];
+      this.data[0] = this.chartService.fillValuesForMonth(data, 'bill');
       this.apply();
     });
   }
