@@ -3,7 +3,7 @@
   "description": "kart: An Ionic project",
   "main": "",
   "authors": [
-    "Сергей Житенев <s.zhitenev@tanto-s.ru>"
+    "Сергей Житенев <zhitenev36@gmail.com>"
   ],
   "license": "MIT",
   "moduleType": [],
@@ -18,6 +18,6 @@
   ],
   "dependencies": {
     "ionic-datepicker": "~0.9.0",
-    "angular-chart.js": "~0.8.5"
+    "c3": "~0.4.10"
   }
 }

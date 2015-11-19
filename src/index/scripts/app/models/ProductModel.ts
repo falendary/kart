@@ -15,6 +15,7 @@ export class Product implements IBaseModel, ISerialisible<Product> {
   total: number;
   price: number;
   quantity: number;
+  removed: boolean; // needs for directive
 
   deserialize(data: Product): Product {
     this._id = data._id;
@@ -25,6 +26,7 @@ export class Product implements IBaseModel, ISerialisible<Product> {
     this.price = data.price;
     this.quantity = data.quantity;
     this.total = data.total;
+    this.removed = data.removed;
 
     return this;
   }

@@ -8,7 +8,6 @@ import {MainController} from './app/controllers/MainController';
 import {ShellController} from './app/controllers/ShellController';
 
 import {InitDatabaseRepository} from './app/repositories/InitDatabaseRepository';
-import {DatabaseService} from './app/services/DatabaseService';
 
 import {StatsController} from './app/controllers/StatsController';
 import {SettingsController} from './app/controllers/SettingsController';
@@ -26,12 +25,12 @@ import {ReportsController} from './app/controllers/ReportsController';
 import {ReportsNewChartController} from "./app/controllers/ReportsNewChartController";
 
 import {BillAddFieldDirective} from './app/directives/BillAddFieldDirective';
+import {C3Directive} from './app/directives/C3Directive';
 
 let app = angular.module('app', [
   'ionic',
   'ionic-datepicker',
-  'ngCordova',
-  'chart.js'
+  'ngCordova'
 ]);
 
 app.config(['$stateProvider', '$urlRouterProvider', Routes]);
@@ -48,8 +47,6 @@ app.run([function () {
 
   console.log('window.kart.db', window.kart.db);
 }]);
-
-app.service('Database', ['$cordovaSQLite', DatabaseService]);
 
 app.controller('ShellController', ['$scope', ShellController]);
 app.controller('MainController', ['$scope', MainController]);
@@ -69,5 +66,6 @@ app.controller('ReportsController', ['$scope', ReportsController]);
 app.controller('ReportsNewChartController', ['$scope', '$state', '$stateParams', ReportsNewChartController]);
 
 app.directive('billAddField', ['$compile', BillAddFieldDirective.factory]);
+app.directive('c3Directive', [C3Directive.factory]);
 
 require('./templates.min.js');

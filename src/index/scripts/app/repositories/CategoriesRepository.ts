@@ -5,8 +5,6 @@
 
 /// <reference path="../../../../../typings/tsd.d.ts" />
 
-import {DatabaseService} from '../services/DatabaseService';
-
 import {IEntityRepository} from './interfaces/IEntityRepository';
 import {Category} from '../models/CategoryModel';
 import {Product} from '../models/ProductModel';

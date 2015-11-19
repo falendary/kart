@@ -47,7 +47,7 @@ export class Routes {
         templateUrl: 'views/reports/reports-new-chart.html',
         controller: 'ReportsNewChartController as vm',
         params: {
-          chartType: null
+          chartDataType: null
         }
       })
       .state('app.bills', {

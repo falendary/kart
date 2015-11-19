@@ -1,7 +1,7 @@
 /**
  * Created by s.zhitenev on 18.11.2015.
  */
-(function(){
+(function () {
 
   'use strict';
 
@@ -12,17 +12,17 @@
 
   var appName = 'core';
 
-  gulp.task('core-angular-chart-copy-js', function(){
+  gulp.task('core-c3-copy-js', function () {
 
     var pathToJs = [
-      'node_modules/chart.js/Chart.js',
-      'bower_components/angular-chart.js/dist/angular-chart.js'];
+      'bower_components/d3/d3.js',
+      'bower_components/c3/c3.js'];
 
     return gulp.src(pathToJs)
-      .pipe(concat('angular-chart.js'))
+      .pipe(concat('c3.js'))
       .pipe(uglify())
-      .pipe(rename('angular-chart.min.js'))
-      .pipe(gulp.dest('www/' + appName + '/scripts' ))
+      .pipe(rename('c3.min.js'))
+      .pipe(gulp.dest('www/' + appName + '/scripts'))
 
   })
 

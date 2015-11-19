@@ -11,12 +11,28 @@
     <input type="text" placeholder="" data-ng-model="field.name"/>
   </div>
   <div class="col-20 bill-column">
-    <input type="number" placeholder="" data-ng-model="field.price" class="text-center" data-ng-change="autoCalcTotal()"/>
+    <input type="text" placeholder=""
+           data-ng-model="field.price"
+           class="text-center"
+           data-ng-keypress="validateInput($event)"
+           data-ng-change="autoCalcTotal()"
+    />
   </div>
   <div class="col-10 bill-column">
-    <input type="number" placeholder="" data-ng-model="field.quantity" class="text-center" data-ng-change="autoCalcTotal()"/>
+    <input type="text" placeholder=""
+           data-ng-model="field.quantity"
+           class="text-center"
+           data-ng-keypress="validateInput($event)"
+           data-ng-change="autoCalcTotal()"
+    />
   </div>
   <div class="col-20 bill-column">
-    <input type="number" placeholder="" data-ng-model="field.total" class="text-center" data-ng-change="updatePrice()"/>
+    <input type="text"
+           placeholder=""
+           data-ng-model="field.total"
+           class="text-center"
+           data-ng-keypress="validateInput($event)"
+           data-ng-change="updatePrice()"
+    />
   </div>
 </div>

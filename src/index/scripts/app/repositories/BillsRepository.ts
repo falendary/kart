@@ -45,11 +45,11 @@ export class BillsRepository implements IEntityRepository<Bill> {
     return undefined;
   }
 
-  public getListByMonth(startDate: Date, endDate: Date): Promise<Array<Bill>> {
+  public getListByRange(startDate: Date, endDate: Date): Promise<Array<Bill>> {
     return window.kart.db.query({
       map: (doc: any, emit: any) => {
         if (new Date(doc.billsDate) > startDate && new Date(doc.billsDate) < endDate) {
-          console.log('doc', doc);
+          //console.log('doc', doc);
           emit(doc);
         }
       }

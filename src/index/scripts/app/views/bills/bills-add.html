@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="bill-footer">
-      <button class="button save-check pull-right" data-ng-click="vm.addBill()">Сохранить чек</button>
+      <button class="button save-check pull-right {{vm.valid ? '' : 'disabled'}}" data-ng-click="vm.addBill()">Сохранить чек</button>
     </div>
   </ion-content>
 </ion-view>

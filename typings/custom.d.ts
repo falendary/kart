@@ -16,5 +16,6 @@ interface Window {
   kart: any;
   mozIndexedDB: any;
   webkitIndexedDB: any;
+  c3: any;
 }
 

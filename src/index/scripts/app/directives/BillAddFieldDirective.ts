@@ -13,6 +13,7 @@ interface BillAddFieldDirectiveScope extends ng.IScope {
   field: Product;
   autoCalcTotal: Action;
   updatePrice: Action;
+  validateInput: Action;
 }
 
 interface BillAddFieldDirectiveAttrs extends ng.IAttributes {
@@ -40,12 +41,24 @@ export class BillAddFieldDirective {
 
     if (!scope.field) {
       scope.field = new Product();
+      scope.field.total = 0;
     }
 
     scope.autoCalcTotal = () => {
-      if (scope.field.price && scope.field.quantity) {
+      if (scope.field.price !== undefined  && scope.field.quantity !== undefined) {
         scope.field.total = scope.field.price * scope.field.quantity;
         scope.updatePrice();
+      }
+    };
+
+    scope.validateInput = ($event: JQueryEventObject) => {
+      var regex = new RegExp('^[0-9]*$');
+      var key = String.fromCharCode(!$event.charCode ? $event.which : $event.charCode);
+      console.log('key', regex.test(key));
+      if (!regex.test(key)) {
+        console.log('test prevent');
+        $event.preventDefault();
+        return false;
       }
     };
 
@@ -61,6 +74,11 @@ export class BillAddFieldDirective {
     };
 
     scope.removeField = () => {
+      scope.field.removed = true;
+      scope.field.total = 0;
+      scope.field.price = 0;
+      scope.field.quantity = 0;
+      scope.updatePrice();
       elem.remove();
     }
   };

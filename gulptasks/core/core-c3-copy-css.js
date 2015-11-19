@@ -11,13 +11,13 @@
 
   var appName = 'core';
 
-  gulp.task('core-angular-chart-copy-css', function(){
+  gulp.task('core-c3-copy-css', function(){
 
-    var pathToCSS = ['bower_components/angular-chart.js/dist/angular-chart.min.css'];
+    var pathToCSS = ['bower_components/c3/c3.min.css'];
 
     return gulp.src(pathToCSS)
-      .pipe(concat('angular-chart.css'))
-      .pipe(rename('angular-chart.min.css'))
+      .pipe(concat('c3.css'))
+      .pipe(rename('c3.min.css'))
       .pipe(gulp.dest('www/' + appName + '/content/css'));
 
   })

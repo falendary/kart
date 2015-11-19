@@ -4,7 +4,6 @@
 /// <reference path="../../../../../typings/tsd.d.ts" />
 
 import {Category} from '../models/CategoryModel';
-import {DatabaseService} from '../services/DatabaseService';
 import {CategoriesService} from '../services/CategoriesService';
 import {BaseController} from './BaseController';
 
@@ -14,7 +13,6 @@ export class ProductsController extends BaseController{
 
   private categoriesService: CategoriesService = new CategoriesService();
   public categories: Array<Category> = [];
-  public db: DatabaseService;
   public shownCategory: Category;
 
   constructor($scope: ng.IScope) {
