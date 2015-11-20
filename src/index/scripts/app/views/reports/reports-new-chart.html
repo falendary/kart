@@ -1,11 +1,13 @@
 <ion-view>
   <ion-nav-title class="capitalize">{{vm.viewTitle}}</ion-nav-title>
   <ion-content>
+    <div class="content padding">
       <div class="card" data-ng-if="vm.data">
         <div id="chart" data-c3-directive
              data-entity-data-set="vm.data"
              data-chart-type="vm.chartType"
              data-chart-title="vm.chartTitle"></div>
       </div>
+    </div>
   </ion-content>
 </ion-view>

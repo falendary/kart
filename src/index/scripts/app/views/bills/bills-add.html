@@ -1,48 +1,53 @@
 <ion-view view-title="Новый чек">
   <ion-content>
-    <div class="bill-header">
-      <div class="row">
-        <div class="col-10 bill-column">
-        </div>
-        <div class="col-40 bill-column">
-          Продукт
-        </div>
-        <div class="col-20 bill-column justify-content-center">
-          Цена<br/>1 шт.
-        </div>
-        <div class="col-10 bill-column">
-          Кол.
-        </div>
-        <div class="col-20 bill-column justify-content-center">
-          Итог
-        </div>
-      </div>
-    </div>
-    <div class="bill-body">
-      <div class="fields-holder">
-        <div data-bill-add-field data-field="vm.bill.fields.field1" data-update-price="vm.updateTotal()"></div>
-      </div>
-      <div class="row">
-        <div class="col-50">
-          <div class="bill-date-holder">
-            <ionic-datepicker input-obj="vm.ionicDatePickerObj">
-              <button class="button button-positive">
-                <span data-ng-show="vm.bill.billsDate" data-ng-bind="vm.bill.billsDate | date:'dd.MM.yyyy'"></span>
-                <span data-ng-hide="vm.bill.billsDate" data-ng-bind="::vm.ionicDatePickerObj.titleLabel"></span>
-              </button>
-            </ionic-datepicker>
+    <div class="content padding">
+      <div class="bill-header">
+        <div class="row">
+          <div class="col-10 bill-column">
           </div>
-        </div>
-        <div class="col-50">
-          <div class="total-holder">
-            <p class="caption">Всего:</p>
-            <p class="total">{{vm.bill.total}}р.</p>
+          <div class="col-40 bill-column">
+            Продукт
+          </div>
+          <div class="col-20 bill-column justify-content-center">
+            Цена<br/>1 шт.
+          </div>
+          <div class="col-10 bill-column">
+            Кол.
+          </div>
+          <div class="col-20 bill-column justify-content-center">
+            Итог
           </div>
         </div>
       </div>
-    </div>
-    <div class="bill-footer">
-      <button class="button save-check pull-right {{vm.valid ? '' : 'disabled'}}" data-ng-click="vm.addBill()">Сохранить чек</button>
+      <div class="bill-body">
+        <div class="fields-holder">
+          <div data-bill-add-field data-field="vm.bill.fields.field1" data-update-price="vm.updateTotal()"></div>
+        </div>
+        <div class="row">
+          <div class="col-50">
+            <div class="bill-date-holder">
+              <ionic-datepicker input-obj="vm.ionicDatePickerObj">
+                <button class="button button-positive">
+                  <span data-ng-show="vm.bill.billsDate" data-ng-bind="vm.bill.billsDate | date:'dd.MM.yyyy'"></span>
+                  <span data-ng-hide="vm.bill.billsDate" data-ng-bind="::vm.ionicDatePickerObj.titleLabel"></span>
+                </button>
+              </ionic-datepicker>
+            </div>
+          </div>
+          <div class="col-50">
+            <div class="total-holder">
+              <p class="caption">Всего:</p>
+
+              <p class="total">{{vm.bill.total}}р.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bill-footer">
+        <button class="button save-check pull-right {{vm.valid ? '' : 'disabled'}}" data-ng-click="vm.addBill()">
+          Сохранить чек
+        </button>
+      </div>
     </div>
   </ion-content>
 </ion-view>

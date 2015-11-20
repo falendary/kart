@@ -1,39 +1,40 @@
 <ion-view view-title="Чеки">
   <ion-content>
-    <button data-ui-sref="app.bills-add" class="button">Добавить чек</button>
+    <div class="content padding">
+      <button data-ui-sref="app.bills-add" class="button">Добавить чек</button>
 
-    <div class="bills-holder">
+      <div class="bills-holder">
 
-      <div class="card">
-        <div class="list">
-          <div class="item item-divider">
-            <div class="row">
-              <div class="col-50">
-                Дата
-              </div>
-              <div class="col-50">
-                Сумма покупок
+        <div class="card">
+          <div class="list">
+            <div class="item item-divider">
+              <div class="row">
+                <div class="col-50">
+                  Дата
+                </div>
+                <div class="col-50">
+                  Сумма покупок
+                </div>
               </div>
             </div>
-          </div>
-          <div class="bill-item item" data-ng-repeat="bill in vm.bills">
-            <div class="row">
-              <div class="col-50">
-                <p class="bill-date" data-ng-bind="::bill.billsDate | date:'dd.MM.yyyy'"></p>
-              </div>
-              <div class="col-25">
-                <p class="bill-total">{{bill.total}}р.</p>
-              </div>
-              <div class="col-25">
-                <button class="button" data-ui-sref="app.bills-detail( {billId: bill._id} )">
-                  <div class="ion-ios-arrow-right" data-pack="ios" data-tags="chevron"></div>
-                </button>
+            <div class="bill-item item" data-ng-repeat="bill in vm.bills">
+              <div class="row">
+                <div class="col-50">
+                  <p class="bill-date" data-ng-bind="::bill.billsDate | date:'dd.MM.yyyy hh:mm'"></p>
+                </div>
+                <div class="col-25">
+                  <p class="bill-total">{{bill.total}}р.</p>
+                </div>
+                <div class="col-25">
+                  <button class="button" data-ui-sref="app.bills-detail( {billId: bill._id} )">
+                    <div class="ion-ios-arrow-right" data-pack="ios" data-tags="chevron"></div>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </ion-content>
 </ion-view>

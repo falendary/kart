@@ -1,59 +1,61 @@
 <ion-view view-title="Детальная">
   <ion-content>
-    <div class="bills-holder" data-ng-if="vm.bill">
-      <div class="bill-header">
-        <div class="row">
-          <div class="col-10 bill-column">
-          </div>
-          <div class="col-40 bill-column">
-            Продукт
-          </div>
-          <div class="col-20 bill-column justify-content-center">
-            Цена<br/>1 шт.
-          </div>
-          <div class="col-10 bill-column">
-            Кол.
-          </div>
-          <div class="col-20 bill-column justify-content-center">
-            Итог
-          </div>
-        </div>
-      </div>
-      <div class="bill-body">
-        <div class="fields-holder">
-          <div class="item row" data-ng-repeat="field in vm.bill.fields">
-            <div class="col-50 bill-column">
-              <input type="text" placeholder="" data-ng-model="field.name"/>
+    <div class="content padding">
+      <div class="bills-holder" data-ng-if="vm.bill">
+        <div class="bill-header">
+          <div class="row">
+            <div class="col-10 bill-column">
             </div>
-            <div class="col-20 bill-column">
-              <input type="text" placeholder="" data-ng-model="field.price" class="text-center"/>
+            <div class="col-40 bill-column">
+              Продукт
+            </div>
+            <div class="col-20 bill-column justify-content-center">
+              Цена<br/>1 шт.
             </div>
             <div class="col-10 bill-column">
-              <input type="text" placeholder="" data-ng-model="field.quantity" class="text-center"/>
+              Кол.
             </div>
-            <div class="col-20 bill-column">
-              <input type="text" placeholder="" data-ng-model="field.total" class="text-center"/>
-            </div>
-          </div>
-
-        </div>
-        <div class="row">
-          <div class="col-50">
-            <div class="bill-date-holder">
-              <span data-ng-show="vm.bill.billsDate" data-ng-bind="vm.bill.billsDate | date:'dd.MM.yyyy'"></span>
-            </div>
-          </div>
-          <div class="col-50">
-            <div class="total-holder">
-              <p class="caption">Всего:</p>
-
-              <p class="total">{{vm.bill.total}}р.</p>
+            <div class="col-20 bill-column justify-content-center">
+              Итог
             </div>
           </div>
         </div>
-      </div>
-      <div class="bill-footer">
-        <button class="button" data-ui-sref="app.bills">Вернуться</button>
+        <div class="bill-body">
+          <div class="fields-holder">
+            <div class="item row" data-ng-repeat="field in vm.bill.fields">
+              <div class="col-50 bill-column">
+                <input type="text" placeholder="" data-ng-model="field.name"/>
+              </div>
+              <div class="col-20 bill-column">
+                <input type="text" placeholder="" data-ng-model="field.price" class="text-center"/>
+              </div>
+              <div class="col-10 bill-column">
+                <input type="text" placeholder="" data-ng-model="field.quantity" class="text-center"/>
+              </div>
+              <div class="col-20 bill-column">
+                <input type="text" placeholder="" data-ng-model="field.total" class="text-center"/>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-50">
+              <div class="bill-date-holder">
+                <span data-ng-show="vm.bill.billsDate" data-ng-bind="vm.bill.billsDate | date:'dd.MM.yyyy'"></span>
+              </div>
+            </div>
+            <div class="col-50">
+              <div class="total-holder">
+                <p class="caption">Всего:</p>
+
+                <p class="total">{{vm.bill.total}}р.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bill-footer">
+          <button class="button" data-ui-sref="app.bills">Вернуться</button>
+        </div>
       </div>
     </div>
   </ion-content>
